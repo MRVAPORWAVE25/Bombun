@@ -801,7 +801,7 @@ Promise.all([
     mergeFiles(getParts("Bombun.wasm", 1, 2))
 ]).then(([pckUrl, wasmUrl]) => {
     window.fetch = async function (url, ...args) {
-        if (url.endsWith("buckshot-roulette.pck")) {
+        if (url.endsWith("Bombun.pck")) {
             return originalFetch(pckUrl, ...args);
         } else if (url.endsWith("Bombun.wasm")) {
             return originalFetch(wasmUrl, ...args);
